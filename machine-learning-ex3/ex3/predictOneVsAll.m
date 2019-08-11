@@ -32,7 +32,7 @@ X = [ones(m, 1) X];
 
 
 
-[dummy, p] = max(sigmoid(X*all_theta'), [], 2)(:, 2)
+[dummy, p] = max(sigmoid(X*all_theta'), [], 2)
 
 
 
