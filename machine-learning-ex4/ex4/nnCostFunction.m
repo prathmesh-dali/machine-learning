@@ -80,7 +80,9 @@ for i = 1:m
 
 J = -1/m*sum(sum((yVec).*log(hThetaZ)+(1-yVec).*log(1-hThetaZ)))
 
+regularized = (sum(sum(Theta1(:,2:end).^2))+sum(sum(Theta2(:,2:end).^2)))* lambda/2/m
 
+J+=regularized
 
 
 
