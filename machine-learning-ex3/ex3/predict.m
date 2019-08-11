@@ -22,7 +22,11 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X = [ones(m, 1) X];
+a = sigmoid(X*Theta1');
+a = [ones(size(a,1), 1) a];
 
+[dummy, p] = max(sigmoid(a*Theta2'), [], 2);
 
 
 
