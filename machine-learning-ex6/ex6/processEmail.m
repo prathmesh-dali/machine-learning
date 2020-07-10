@@ -99,7 +99,10 @@ while ~isempty(email_contents)
 
 
 
-
+    [tf, s_idx] = ismember(str, vocabList);
+    if s_idx ~= 0
+        word_indices = [word_indices; s_idx];
+    endif;
 
 
 
