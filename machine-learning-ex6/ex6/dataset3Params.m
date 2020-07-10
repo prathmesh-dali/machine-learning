@@ -29,7 +29,7 @@ for i = 1:length(temp)
   for j = 1:length(temp)
     temp_c = temp(i);
     temp_sigma = temp(j);
-    model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+    model= svmTrain(X, y, temp_c, @(x1, x2) gaussianKernel(x1, x2, temp_sigma));
     predictions = svmPredict(model, Xval);
     if mean(double(predictions ~= yval))<error
       error = mean(double(predictions ~= yval));
