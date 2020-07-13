@@ -23,11 +23,10 @@ idx = zeros(size(X,1), 1);
 for i = 1:length(X)
     lowest_error = inf;
     for j = 1: length (centroids)
-        error = norm(X(i)-centroids(j))^2
-        lowest_error
+        error = norm(X(i)-centroids(j))^2;
         if(error <= lowest_error)
             lowest_error = error;
-            K(i) = j;
+            idx(i) = j;
         endif;
     endfor;
 endfor;
