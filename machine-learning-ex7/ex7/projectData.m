@@ -19,6 +19,9 @@ Z = zeros(size(X, 1), K);
 %
 
 U_reduce = U(:,1:K);
+size(U_reduce)
+size(X)
+size(Z)
 Z = U_reduce'*X;
 
 % =============================================================
