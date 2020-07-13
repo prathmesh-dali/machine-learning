@@ -26,10 +26,10 @@ for i = 1:length(X)
         if i<4
             i
             j
-            norm(X(i)-centroids(j))^2
+            sqrt(sum(power((X(i,:)-centroids(j,:)),2)))
             lowest_error
         endif;
-        error = norm(X(i)-centroids(j))^2;
+        error = sqrt(sum(power((X(i,:)-centroids(j,:)),2)));
         if(error <= lowest_error)
             lowest_error = error;
             idx(i) = j;
