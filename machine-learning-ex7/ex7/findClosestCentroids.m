@@ -23,12 +23,6 @@ idx = zeros(size(X,1), 1);
 for i = 1:length(X)
     lowest_error = inf;
     for j = 1: length (centroids)
-        if i<4
-            i
-            j
-            sqrt(sum(power((X(i,:)-centroids(j,:)),2)))
-            lowest_error
-        endif;
         error = sqrt(sum(power((X(i,:)-centroids(j,:)),2)));
         if(error <= lowest_error)
             lowest_error = error;
