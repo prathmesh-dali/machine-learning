@@ -20,8 +20,17 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
+lowest_error = infinite;
+for i = 1:length(X)
+    for j = 1: length (centroid)
+        error = norm(X(i)-centroid(j));
+        if(error <= lowest_error)
+            lowest_error = error;
+            K(i) = j;
+        endif;
+    endfor;
+endfor;
+        
 
 
 
