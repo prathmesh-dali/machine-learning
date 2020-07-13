@@ -22,8 +22,8 @@ idx = zeros(size(X,1), 1);
 %
 lowest_error = inf;
 for i = 1:length(X)
-    for j = 1: length (centroid)
-        error = norm(X(i)-centroid(j));
+    for j = 1: length (centroids)
+        error = norm(X(i)-centroids(j));
         if(error <= lowest_error)
             lowest_error = error;
             K(i) = j;
