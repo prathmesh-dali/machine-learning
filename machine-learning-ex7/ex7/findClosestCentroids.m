@@ -20,17 +20,16 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-for i = 1:length(X)
-    lowest_error = inf;
-    for j = 1: length (centroids)
-        error = sqrt(sum(power((X(i,:)-centroids(j,:)),2)));
-        if(error <= lowest_error)
-            lowest_error = error;
-            idx(i) = j;
-        endif;
-    endfor;
-endfor;
-        
+m = size(X,1);
+
+for i = 1:m
+    distance_array = zeros(1,K);
+    for j = 1:K
+        distance_array(1,j) = sqrt(sum(power((X(i,:)-centroids(j,:)),2)));
+    end
+    [~, d_idx] = min(distance_array);
+    idx(i,1) = d_idx;
+end        
 
 
 
